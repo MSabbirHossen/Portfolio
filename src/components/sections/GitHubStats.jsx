@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaCodeBranch, FaGithub, FaUsers } from 'react-icons/fa';
+
+import { FaGithub, FaUsers, FaCodeBranch, FaStar } from 'react-icons/fa';
 import { portfolioData } from '../../data/portfolioData';
 import Typography from '../common/Typography';
 import Card from '../common/Card';
@@ -15,7 +16,7 @@ export default function GitHubStats() {
   const animationFrameIdRef = useRef(null);
 
   const username = 'MSabbirHossen';
-  
+
   const error = !hasGitHubUsername
     ? 'Add a GitHub username in portfolioData to show live stats.'
     : fetchError;
@@ -26,16 +27,12 @@ export default function GitHubStats() {
         const res = await fetch('/Portfolio/stats.json');
 
         if (!res.ok) {
-          throw new Error('Stats unavailable');
+          throw new Error('Unable to load GitHub stats');
         }
 
         const data = await res.json();
 
-        setStats({
-          publicRepos: data.public_repos,
-          followers: data.followers,
-          following: data.following,
-        });
+        setStats(data);
       } catch (err) {
         setFetchError(err.message);
       } finally {
@@ -92,6 +89,16 @@ export default function GitHubStats() {
       label: 'Following',
       icon: FaGithub,
       value: displayStats.following,
+    },
+    {
+      label: 'Stars',
+      icon: FaStar,
+      value: displayStats.totalStars,
+    },
+    {
+      label: 'Forks',
+      icon: FaCodeBranch,
+      value: displayStats.totalForks,
     },
   ];
 

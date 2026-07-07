@@ -4,7 +4,6 @@ import { FaCodeBranch, FaGithub, FaUsers } from 'react-icons/fa';
 import { portfolioData } from '../../data/portfolioData';
 import Typography from '../common/Typography';
 import Card from '../common/Card';
-import { div } from 'framer-motion/client';
 
 export default function GitHubStats() {
   const { github } = portfolioData.personalInfo;
@@ -15,39 +14,37 @@ export default function GitHubStats() {
   const [fetchError, setFetchError] = useState(null);
   const animationFrameIdRef = useRef(null);
 
-  const username = github?.match(/github\.com\/([^/]+)/)?.[1];
+  const username = 'MSabbirHossen';
+  
   const error = !hasGitHubUsername
     ? 'Add a GitHub username in portfolioData to show live stats.'
     : fetchError;
 
   useEffect(() => {
-    if (!hasGitHubUsername) {
-      return;
-    }
-
     const fetchStats = async () => {
       try {
-        const res = await fetch(`https://api.github.com/users/${username}`);
+        const res = await fetch('/Portfolio/stats.json');
 
         if (!res.ok) {
-          throw new Error('Failed to fetch GitHub data');
+          throw new Error('Stats unavailable');
         }
 
         const data = await res.json();
+
         setStats({
           publicRepos: data.public_repos,
           followers: data.followers,
           following: data.following,
         });
-      } catch (e) {
-        setFetchError(e.message);
+      } catch (err) {
+        setFetchError(err.message);
       } finally {
         setLoading(false);
       }
     };
 
     fetchStats();
-  }, [hasGitHubUsername, username]);
+  }, []);
 
   useEffect(() => {
     if (loading || error) return undefined;
@@ -166,11 +163,11 @@ export default function GitHubStats() {
               </Typography>{' '}
               <p className="flex justify-center text-center">
                 {' '}
-                <img src="https://github-readme-streak-stats.herokuapp.com/?user=MSabbirHossen&theme=github-dark&hide_border=true" />{' '}
+                <img src="https://github-readme-stats.vercel.app/api?username=MSabbirHossen&show_icons=true&theme=github_dark&hide_border=true" />{' '}
               </p>
               <p className="text-center">
                 {' '}
-                <img src="https://github-readme-activity-graph.vercel.app/graph?username=MSabbirHossen&theme=github-compact&hide_border=true" />{' '}
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MSabbirHossen&layout=compact&theme=github_dark&hide_border=true" />{' '}
               </p>
             </div>
 

@@ -9,8 +9,12 @@ import Card from '../common/Card';
 export default function GitHubStats() {
   const { github } = portfolioData.personalInfo;
   const hasGitHubUsername = Boolean(github?.match(/github\.com\/([^/]+)/)?.[1]);
-  const [stats, setStats] = useState({ publicRepos: 0, followers: 0, following: 0 });
-  const [displayStats, setDisplayStats] = useState({ publicRepos: 0, followers: 0, following: 0 });
+  const [stats, setStats] = useState({ public_repos: 0, followers: 0, following: 0 });
+  const [displayStats, setDisplayStats] = useState({
+    public_repos: 0,
+    followers: 0,
+    following: 0,
+  });
   const [loading, setLoading] = useState(hasGitHubUsername);
   const [fetchError, setFetchError] = useState(null);
   const animationFrameIdRef = useRef(null);
@@ -55,7 +59,7 @@ export default function GitHubStats() {
       const easeOut = 1 - (1 - progress) ** 3;
 
       setDisplayStats({
-        publicRepos: Math.round(target.publicRepos * easeOut),
+        public_repos: Math.round(target.public_repos * easeOut),
         followers: Math.round(target.followers * easeOut),
         following: Math.round(target.following * easeOut),
       });
@@ -78,7 +82,7 @@ export default function GitHubStats() {
     {
       label: 'Repositories',
       icon: FaCodeBranch,
-      value: displayStats.publicRepos,
+      value: displayStats.public_repos,
     },
     {
       label: 'Followers',
@@ -90,16 +94,16 @@ export default function GitHubStats() {
       icon: FaGithub,
       value: displayStats.following,
     },
-    {
-      label: 'Stars',
-      icon: FaStar,
-      value: displayStats.totalStars,
-    },
-    {
-      label: 'Forks',
-      icon: FaCodeBranch,
-      value: displayStats.totalForks,
-    },
+    // {
+    //   label: 'Stars',
+    //   icon: FaStar,
+    //   value: displayStats.totalStars,
+    // },
+    // {
+    //   label: 'Forks',
+    //   icon: FaCodeBranch,
+    //   value: displayStats.totalForks,
+    // },
   ];
 
   return (
@@ -169,6 +173,10 @@ export default function GitHubStats() {
                 GitHub Analytics
               </Typography>{' '}
               <p className="flex justify-center text-center">
+                {' '}
+                <img src="https://streak-stats.demolab.com?user=MSabbirHossen&theme=github-dark&hide_border=true" />{' '}
+              </p>
+              <p className="text-center">
                 {' '}
                 <img src="https://github-readme-stats.vercel.app/api?username=MSabbirHossen&show_icons=true&theme=github_dark&hide_border=true" />{' '}
               </p>

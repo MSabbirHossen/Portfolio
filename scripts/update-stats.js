@@ -44,15 +44,18 @@ async function main() {
       count,
     }));
 
-  const recentRepos = repos.slice(0, 6).map((repo) => ({
-    name: repo.name,
-    description: repo.description,
-    language: repo.language,
-    stars: repo.stargazers_count,
-    forks: repo.forks_count,
-    url: repo.html_url,
-    updated: repo.updated_at,
-  }));
+  const recentRepos = repos
+    .filter((repo) => repo.name !== 'MSabbirHossen' && repo.name !== 'Md_Sabbir_Hossen')
+    .slice(0, 6)
+    .map((repo) => ({
+      name: repo.name,
+      description: repo.description || 'No description available',
+      language: repo.language || 'Unknown',
+      stars: repo.stargazers_count,
+      forks: repo.forks_count,
+      url: repo.html_url,
+      updated: repo.updated_at,
+    }));
 
   const stats = {
     publicRepos: user.public_repos,

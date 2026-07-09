@@ -7,7 +7,7 @@ const Skills = lazy(() => import('../components/sections/Skills'));
 const Projects = lazy(() => import('../components/sections/Projects'));
 const Certifications = lazy(() => import('../components/sections/Certifications'));
 const Education = lazy(() => import('../components/sections/Education'));
-const GitHubStats = lazy(() => import('../components/sections/GitHubStats'));
+const GitHubStats = lazy(() => import('../components/github/GitHubStats'));
 const Contact = lazy(() => import('../components/sections/Contact'));
 
 export default function Home() {

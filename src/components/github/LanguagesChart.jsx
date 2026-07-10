@@ -3,7 +3,23 @@ import Typography from '../common/Typography';
 import Card from '../common/Card';
 
 export default function LanguagesChart({ languages }) {
+  if (!languages?.length) return null;
+
   const total = languages.reduce((sum, lang) => sum + lang.count, 0);
+
+  const colors = {
+    JavaScript: '#f1e05a',
+    TypeScript: '#3178c6',
+    HTML: '#e34c26',
+    CSS: '#663399',
+    Python: '#3572A5',
+    Java: '#b07219',
+    C: '#555555',
+    'C++': '#f34b7d',
+    CSharp: '#178600',
+    Go: '#00ADD8',
+    Rust: '#dea584',
+  };
 
   return (
     <div className="mt-12">
@@ -12,26 +28,52 @@ export default function LanguagesChart({ languages }) {
       </Typography>
 
       <Card className="space-y-5">
-        {languages.map((lang) => {
+        <div className="mb-6 border-b border-slate-700 pb-4">
+          <Typography variant="subtitle" className="font-semibold">
+            Language Distribution
+          </Typography>
+
+          <Typography variant="caption">Based on your public repositories</Typography>
+        </div>
+        {languages.map((lang, index) => {
           const percent = (lang.count / total) * 100;
 
           return (
             <div key={lang.name}>
               <div className="mb-2 flex justify-between">
-                <span>{lang.name}</span>
-                <span>{lang.count}</span>
+                <div className="flex items-center gap-3">
+                  <span
+                    className="h-3 w-3 rounded-full"
+                    style={{
+                      backgroundColor: colors[lang.name] || '#3B82F6',
+                    }}
+                  />
+
+                  <div>
+                    <Typography variant="body" className="font-semibold text-slate-200">
+                      {lang.name}
+                    </Typography>
+
+                    <Typography variant="caption">{lang.count} repositories</Typography>
+                  </div>
+                </div>
+                <span className="text-sm text-slate-400">{percent.toFixed(0)}%</span>
               </div>
 
-              <div className="h-3 overflow-hidden rounded-full bg-slate-700">
+              <div className="h-4 overflow-hidden rounded-full bg-slate-800">
                 <motion.div
                   initial={{ width: 0 }}
                   whileInView={{ width: `${percent}%` }}
                   viewport={{ once: true }}
                   transition={{
                     duration: 1,
+                    delay: index * 0.15,
                     ease: 'easeOut',
                   }}
-                  className="h-full rounded-full bg-cyan-500"
+                  style={{
+                    backgroundColor: colors[lang.name] || '#3B82F6',
+                  }}
+                  className="h-full rounded-full"
                 />
               </div>
             </div>

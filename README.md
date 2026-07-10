@@ -20,10 +20,20 @@
 ## 📈 GitHub Analytics
 
  <p align="center">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=MSabbirHossen&theme=github-dark&hide_border=true" />
+    <img
+  src="https://streak-stats.demolab.com?user=MSabbirHossen&theme=github-dark&hide_border=true"
+/>
   </p>
   <p align="center">
     <img src="https://github-readme-activity-graph.vercel.app/graph?username=MSabbirHossen&theme=github-compact&hide_border=true" />
+  </p>
+
+---
+
+## 🐍 Contribution Snake
+
+  <p align="center">
+     <img src="https://raw.githubusercontent.com/MSabbirHossen/MSabbirHossen/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake"/>
   </p>
 
 ---
@@ -190,8 +200,8 @@ A vibrant, urban-themed web application for discovering, exploring, and download
 | 📍 **Location**  | Madinah, Saudi Arabia                                      |
 | 📧 **Email**     | mshossen724@gmail.com                                      |
 | 🌐 **Portfolio** | [PORTFOLIO_URL](https://portfolio-ashy-chi-34.vercel.app/) |
-| 💼 **Linkedin** | [LINKEDIN_PORFILE](https://www.linkedin.com/in/ms-hossen/) |
-| 💼 **Facebook** | [Facebook_PORFILE](https://web.facebook.com/sabb1rhossen/) |
+| 💼 **Linkedin**  | [LINKEDIN_PORFILE](https://www.linkedin.com/in/ms-hossen/) |
+| 💼 **Facebook**  | [Facebook_PORFILE](https://web.facebook.com/sabb1rhossen/) |
 
 ---
 

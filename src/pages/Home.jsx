@@ -24,8 +24,8 @@ export default function Home() {
       <Suspense fallback={null}>
         <About />
         <GitHubStats />
-        <Skills />
         <Projects />
+        <Skills />
         <Certifications />
         <Education />
         <Contact />

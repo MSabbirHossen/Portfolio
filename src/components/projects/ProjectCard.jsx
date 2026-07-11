@@ -19,9 +19,9 @@ export default function ProjectCard({ project }) {
           ? `${project.overview.substring(0, 90)}...`
           : project.overview}
       </Typography>
+      <ProjectMeta project={project} />
 
       <TechnologyIcons project={project} />
-      <ProjectMeta project={project} />
 
       <ProjectLinks project={project} />
     </Card>

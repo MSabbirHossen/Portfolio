@@ -7,7 +7,7 @@ export default function Skills() {
 
   return (
     <SectionWrapper id="skills" title="Skills" className="bg-gray-50 dark:bg-gray-900 glass">
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 mx-auto max-w-5xl px-4">
         {skills.map((category) => (
           <SkillCategoryCard key={category.category} category={category} />
         ))}

@@ -1,22 +1,26 @@
-import { motion } from 'framer-motion';
-import { FaCode, FaDatabase, FaRobot, FaShieldAlt, FaTools } from 'react-icons/fa';
+// import { motion } from 'framer-motion';
+// import { FaCode, FaDatabase, FaRobot, FaShieldAlt, FaTools } from 'react-icons/fa';
+// import { portfolioData } from '../../data/portfolioData';
+// import Typography from '../common/Typography';
+// import Badge from '../common/Badge';
+// import Card from '../common/Card';
+// import Reveal from '../animations/Reveal';
+import SectionWrapper from '../common/SectionWrapper';
+
 import { portfolioData } from '../../data/portfolioData';
 import Typography from '../common/Typography';
-import Badge from '../common/Badge';
-import Card from '../common/Card';
-import Reveal from '../animations/Reveal';
-import SectionWrapper from '../common/SectionWrapper';
+import SkillCategoryCard from '../skills/SkillCategoryCard';
 
 export default function Skills() {
   const { skills } = portfolioData;
 
-  const categoryIcons = {
-    Frontend: FaCode,
-    'Backend & Database': FaDatabase,
-    'AI & Data Science': FaRobot,
-    'Cybersecurity & OSINT': FaShieldAlt,
-    'Tools & Workflows': FaTools,
-  };
+  // const categoryIcons = {
+  //   Frontend: FaCode,
+  //   'Backend & Database': FaDatabase,
+  //   'AI & Data Science': FaRobot,
+  //   'Cybersecurity & OSINT': FaShieldAlt,
+  //   'Tools & Workflows': FaTools,
+  // };
 
   return (
     <SectionWrapper id="skills" className="py-20 bg-gray-50 dark:bg-gray-900 glass">
@@ -28,7 +32,7 @@ export default function Skills() {
           Skills
         </Typography>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {/* <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {skills.map((cat) => (
             <Reveal key={cat.category} y={18} duration={0.45} amount={0.2} whileHover={{ y: -4 }}>
               <Card className="h-full space-y-5">
@@ -58,6 +62,11 @@ export default function Skills() {
                 </div>
               </Card>
             </Reveal>
+          ))}
+        </div> */}
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {skills.map((category) => (
+            <SkillCategoryCard key={category.category} category={category} />
           ))}
         </div>
       </div>

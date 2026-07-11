@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Hero from '../components/sections/Hero';
 
 const About = lazy(() => import('../components/about/About.jsx'));
-const Skills = lazy(() => import('../components/sections/Skills'));
+const Skills = lazy(() => import('../components/skills/Skills.jsx'));
 const Projects = lazy(() => import('../components/sections/Projects'));
 const Certifications = lazy(() => import('../components/sections/Certifications'));
 const Education = lazy(() => import('../components/sections/Education'));

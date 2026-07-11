@@ -6,6 +6,8 @@ import Card from '../common/Card';
 import CountUp from 'react-countup';
 import AboutStats from '../about/AboutStats';
 import LanguageProgress from '../about/LanguageProgress';
+import JourneyCard from '../about/JourneyCard.jsx';
+import QuickFactsCard from '../about/QuickFactsCard.jsx';
 
 export default function About() {
   const { personalInfo } = portfolioData;
@@ -92,50 +94,12 @@ export default function About() {
 
         {/* Journey + Profile */}
         <div className="grid gap-6 lg:grid-cols-[1.5fr_0.8fr]">
-          {/* Journey */}
-
           <motion.div variants={itemVariants}>
-            <Card className="h-full space-y-5">
-              <Typography variant="subtitle" className="text-slate-100">
-                🚀 My Journey
-              </Typography>
-
-              <Typography variant="body" className="leading-8 text-slate-400 md:text-justify">
-                {journey}
-              </Typography>
-            </Card>
+            <JourneyCard journey={journey} />
           </motion.div>
 
-          {/* Quick Facts */}
-
           <motion.div variants={itemVariants}>
-            <Card className="space-y-5">
-              <Typography variant="subtitle" className="text-slate-100">
-                👨 Quick Facts
-              </Typography>
-
-              <div className="space-y-4 text-slate-300">
-                <div>
-                  <p className="text-sm text-slate-500">Role</p>
-                  <p>{title}</p>
-                </div>
-
-                <div>
-                  <p className="text-sm text-slate-500">Studying At</p>
-                  <p>{studyingAt}</p>
-                </div>
-
-                <div>
-                  <p className="text-sm text-slate-500">Location</p>
-                  <p>{location}</p>
-                </div>
-
-                {/* <div>
-                  <p className="text-sm text-slate-500">Languages</p>
-                  <p>{languages.length} Languages</p>
-                </div> */}
-              </div>
-            </Card>
+            <QuickFactsCard title={title} studyingAt={studyingAt} location={location} />
           </motion.div>
         </div>
 
@@ -197,7 +161,7 @@ export default function About() {
         </motion.div> */}
 
         {/* Languages */}
-{/* 
+        {/* 
         <motion.div variants={itemVariants} className="mt-10">
           <Typography variant="subtitle" className="mb-5 text-slate-100">
             🌍 Languages

@@ -14,7 +14,10 @@ export default function TechnologyIcons({ project }) {
           <div
             key={`${tech.name}-${index}`}
             title={tech.name}
-            className="group flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-400 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-800"
+            className="group flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 
+            hover:border-accent-primary
+            hover:text-accent-secondary
+            dark:border-slate-700 dark:bg-slate-800"
           >
             <Icon className="text-xl transition-transform duration-300 group-hover:scale-110" />
           </div>

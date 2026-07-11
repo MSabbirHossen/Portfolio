@@ -5,6 +5,7 @@ import Typography from '../common/Typography';
 import Badge from '../common/Badge';
 import Card from '../common/Card';
 import Reveal from '../animations/Reveal';
+import SectionWrapper from '../common/SectionWrapper';
 
 export default function Skills() {
   const { skills } = portfolioData;
@@ -18,7 +19,7 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-900 glass">
+    <SectionWrapper id="skills" className="py-20 bg-gray-50 dark:bg-gray-900 glass">
       <div className="mx-auto max-w-5xl px-4">
         <Typography
           variant="h2"
@@ -60,6 +61,6 @@ export default function Skills() {
           ))}
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

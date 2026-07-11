@@ -12,8 +12,6 @@ export default function ProjectCard({ project }) {
 
   // <ProjectImage />
 
-
-
   // Description
 
   // <ProjectMeta />
@@ -40,7 +38,9 @@ export default function ProjectCard({ project }) {
           {overview.length > 120 ? `${overview.substring(0, 120)}...` : overview}
         </Typography>
       </div>
-      <ProjectMeta project={project} />
+      <div>
+        <ProjectMeta project={project} />
+      </div>{' '}
       <TechnologyIcons technologies={technologies} />
       <ProjectLinks project={project} />
     </Card>

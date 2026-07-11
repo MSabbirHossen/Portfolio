@@ -595,7 +595,7 @@ export const portfolioData = {
       status: 'Completed',
       year: '2026',
       role: 'Solo Developer',
-      duration: 'a Weeks',
+      duration: '2 Weeks',
       teamSize: '1',
       client: 'Personal',
       difficulty: 'Advanced',

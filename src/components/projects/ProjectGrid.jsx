@@ -8,7 +8,7 @@ export default function ProjectGrid({ projects, activeCategory }) {
     <AnimatePresence mode="popLayout">
       <motion.div
         key={activeCategory}
-        className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+        className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}

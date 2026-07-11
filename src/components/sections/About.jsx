@@ -4,6 +4,7 @@ import Typography from '../common/Typography';
 import Badge from '../common/Badge';
 import Card from '../common/Card';
 import CountUp from 'react-countup';
+import AboutStats from '../about/AboutStats';
 
 export default function About() {
   const { personalInfo } = portfolioData;
@@ -139,13 +140,7 @@ export default function About() {
 
         {/* Stats */}
         <div className="mt-8 grid grid-cols-2 gap-5 md:grid-cols-4">
-          {stats.map((stat) => (
-            <div key={stat.label} className="rounded-xl border p-6 text-center">
-              <h3 className="text-3xl font-bold text-primary-400">{stat.value}</h3>
-
-              <p>{stat.label}</p>
-            </div>
-          ))}
+          <AboutStats stats={stats} />
         </div>
 
         {/* Values */}

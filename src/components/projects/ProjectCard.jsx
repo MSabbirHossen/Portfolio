@@ -4,6 +4,7 @@ import TechnologyIcons from './TechnologyIcons';
 import ProjectLinks from './ProjectLinks';
 import ProjectMeta from './ProjectMeta';
 import ProjectStatusBadge from './ProjectStatusBadge';
+import ProjectHeader from './ProjectHeader';
 
 export default function ProjectCard({ project }) {
   const { title, overview, technologies, githubUrl, liveUrl } = project;
@@ -11,7 +12,7 @@ export default function ProjectCard({ project }) {
 
   // <ProjectImage />
 
-  // <ProjectHeader />
+
 
   // Description
 
@@ -33,12 +34,8 @@ export default function ProjectCard({ project }) {
         />
       </div>
       <div className="space-y-3">
-        <Typography variant="subtitle" className="text-slate-900 dark:text-slate-100">
-          {title}
-        </Typography>
-        <div>
-          <ProjectStatusBadge status={project.status} />
-        </div>{' '}
+        <ProjectHeader title="Portfolio Website" featured status="Completed" project={project} />
+
         <Typography variant="body" className="text-slate-700 dark:text-slate-300">
           {overview.length > 120 ? `${overview.substring(0, 120)}...` : overview}
         </Typography>

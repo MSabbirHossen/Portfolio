@@ -1,7 +1,9 @@
 import Typography from '../common/Typography';
 import ProjectStatusBadge from './ProjectStatusBadge';
 
-export default function ProjectHeader({ title, featured, status }) {
+export default function ProjectHeader({ project }) {
+  const { title, featured, status } = project;
+
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap items-center gap-2">

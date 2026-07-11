@@ -6,6 +6,8 @@ import LanguagesCard from './LanguagesCard';
 import QuickFactsCard from './QuickFactsCard';
 import StatsGrid from './StatsGrid';
 
+import { AboutIntro, QuickFacts, AboutStats, Languages } from '../about';
+
 export default function About() {
   const { personalInfo } = portfolioData;
 

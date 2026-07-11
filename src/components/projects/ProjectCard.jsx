@@ -2,6 +2,7 @@ import Typography from '../common/Typography';
 import Card from '../common/Card';
 import TechnologyIcons from './TechnologyIcons';
 import ProjectLinks from './ProjectLinks';
+import ProjectMeta from './ProjectMeta';
 
 export default function ProjectCard({ project }) {
   const { title, overview, technologies, githubUrl, liveUrl } = project;
@@ -19,11 +20,16 @@ export default function ProjectCard({ project }) {
         <Typography variant="subtitle" className="text-slate-900 dark:text-slate-100">
           {title}
         </Typography>
+        <div>
+          <span className="rounded-full bg-green-500/10 px-3 py-1 text-xs font-semibold text-green-400">
+            {project.status}
+          </span>
+        </div>
         <Typography variant="body" className="text-slate-700 dark:text-slate-300">
           {overview.length > 120 ? `${overview.substring(0, 120)}...` : overview}
         </Typography>
       </div>
-
+      <ProjectMeta project={project} />
       <TechnologyIcons technologies={technologies} />
       <ProjectLinks project={project} />
     </Card>

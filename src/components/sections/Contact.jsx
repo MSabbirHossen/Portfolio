@@ -9,6 +9,10 @@ import Card from '../common/Card';
 import Input from '../common/Input';
 import emailjs from '@emailjs/browser';
 import Reveal from '../animations/Reveal';
+import ContactForm from '../contact/ContactForm';
+import SectionWrapper from '../common/SectionWrapper';
+import ContactInfo from '../contact/ContactInfo';
+import CollaborationCard from '../contact/CollaborationCard';
 
 export default function Contact() {
   const { personalInfo } = portfolioData;
@@ -42,17 +46,23 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900 glass">
+    <SectionWrapper
+      id="contact"
+      eyebrow="Get In Touch"
+      title="Contact Me"
+      description="Whether you have a project, an opportunity, or just want to connect, I'd love to hear from you."
+      className="py-20 bg-gray-50 dark:bg-gray-900 glass"
+    >
       <div className="mx-auto max-w-6xl px-4">
-        <Typography
+        {/* <Typography
           variant="h2"
           className="mb-8 text-center text-primary-600 dark:text-primary-400"
         >
           Contact Me
-        </Typography>
+        </Typography> */}
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <Reveal y={18} duration={0.5} amount={0.2}>
+          {/* <Reveal y={18} duration={0.5} amount={0.2}>
             <Card className="h-full space-y-6">
               <div>
                 <Typography variant="subtitle" className="text-slate-100">
@@ -62,6 +72,7 @@ export default function Contact() {
                   For collaboration, feedback, or opportunities, use the form below.
                 </Typography>
               </div>
+
 
               <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-4">
                 <Input
@@ -109,52 +120,18 @@ export default function Contact() {
                 </Button>
               </form>
             </Card>
+          </Reveal> */}
+          <Reveal y={18}>
+            <ContactForm />
           </Reveal>
 
           <Reveal y={18} duration={0.5} delay={0.08} amount={0.2}>
-            <Card className="h-full space-y-5">
-              <Typography variant="subtitle" className="text-slate-100">
-                Contact details
-              </Typography>
-
-              <div className="space-y-4 text-slate-400">
-                <div className="flex items-start gap-3">
-                  <FaEnvelope className="mt-1 h-4 w-4 text-accent-secondary" />
-                  <div>
-                    <p className="text-sm font-medium text-slate-100">Email</p>
-                    <a href={`mailto:${personalInfo.email}`} className="hover:underline">
-                      {personalInfo.email}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <FaMapMarkerAlt className="mt-1 h-4 w-4 text-accent-secondary" />
-                  <div>
-                    <p className="text-sm font-medium text-slate-100">Location</p>
-                    <p>{personalInfo.location}</p>
-                  </div>
-                </div>
-
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-sm font-medium text-slate-100">Preferred collaboration</p>
-                  <ul className="mt-2 text-sm text-slate-400">
-                    {/* <li>Open to freelance projects, collaborations, and full-time opportunities.</li>
-                    <li>Available for remote work and flexible schedules.</li>
-                    <li>Happy to discuss ideas, provide feedback, or mentor.</li> */}
-                    {portfolioData.preferredCollaboration.map((item, index) => (
-                      <li className="pl-6" key={index}>
-                        {' '}
-                        - {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </Card>
+            {/* <Reveal y={18} delay={0.08}> */}
+            <ContactInfo />
+            {/* </Reveal> */}
           </Reveal>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

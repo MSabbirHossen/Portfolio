@@ -45,6 +45,10 @@ import {
   FaCalendarAlt,
   FaCss3,
   FaChartArea,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaLinkedin,
+  FaFacebook,
 } from 'react-icons/fa';
 
 // VS Code
@@ -777,8 +781,41 @@ export const portfolioData = {
     },
   ],
   preferredCollaboration: [
-    'Open to freelance projects, collaborations, and full-time opportunities.',
-    'Available for remote work and flexible schedules.',
-    'Happy to discuss ideas, provide feedback, or mentor.',
+    'MERN Development',
+    'Freelance Projects',
+    'Cybersecurity',
+    'Open Source',
+    'AI Projects',
   ],
+  // contactMethods: [
+  //   {
+  //     title: 'Email',
+  //     icon: FaEnvelope,
+  //     value: personalInfo.email,
+  //     href: `mailto:${personalInfo.email}`,
+  //   },
+  //   {
+  //     title: 'LinkedIn',
+  //     icon: FaLinkedin,
+  //     value: personalInfo.linkedin,
+  //     href: personalInfo.linkedin,
+  //   },
+  //   {
+  //     title: 'GitHub',
+  //     icon: FaGithub,
+  //     value: personalInfo.github,
+  //     href: personalInfo.github,
+  //   },
+  //   {
+  //     title: 'Facebook',
+  //     icon: FaFacebook,
+  //     value: personalInfo.facebook,
+  //     href: personalInfo.facebook,
+  //   },
+  //   {
+  //     title: 'Location',
+  //     icon: FaMapMarkerAlt,
+  //     value: personalInfo.location,
+  //   },
+  // ],
 };

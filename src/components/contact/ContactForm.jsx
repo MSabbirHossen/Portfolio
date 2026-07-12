@@ -35,6 +35,11 @@ const ContactForm = () => {
 
       toast.success('Message sent! Thank you for reaching out.');
       reset();
+
+      window.scrollTo({
+        top: document.getElementById('contact').offsetTop,
+        behavior: 'smooth',
+      });
     } catch (error) {
       console.error('EmailJS Error:', error);
       toast.error('Failed to send message. Please try again later.');
@@ -43,14 +48,14 @@ const ContactForm = () => {
   return (
     <div>
       <Reveal y={18} duration={0.5} amount={0.2}>
-        <Card className="h-full space-y-8">
+        <Card className="h-full space-y-10">
           <div>
             <Typography variant="subtitle" className="text-slate-100">
               Send a message
             </Typography>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-6">
+          <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-7">
             <Input
               label="Name"
               placeholder="Your full name"

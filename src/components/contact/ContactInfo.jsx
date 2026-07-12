@@ -21,6 +21,37 @@ import CollaborationCard from './CollaborationCard';
 
 const ContactInfo = () => {
   const { personalInfo } = portfolioData;
+  const contactItems = [
+    {
+      title: 'Email',
+      icon: FaEnvelope,
+      value: personalInfo.email,
+      href: `mailto:${personalInfo.email}`,
+    },
+    {
+      title: 'GitHub',
+      icon: FaGithub,
+      value: personalInfo.github,
+      href: personalInfo.github,
+    },
+    {
+      title: 'LinkedIn',
+      icon: FaLinkedin,
+      value: personalInfo.linkedin,
+      href: personalInfo.linkedin,
+    },
+    // {
+    //   title: 'Facebook',
+    //   icon: FaFacebook,
+    //   value: personalInfo.facebook,
+    //   href: personalInfo.facebook,
+    // },
+    // {
+    //   title: 'Location',
+    //   icon: FaMapMarkerAlt,
+    //   value: personalInfo.location,
+    // },
+  ];
   return (
     <div>
       <Card className="h-full space-y-4">
@@ -29,29 +60,12 @@ const ContactInfo = () => {
         </Typography>
 
         <div className="space-y-4 text-slate-400">
-          <ContactItem icon={FaEnvelope} title="Email">
-            <a href={`mailto:${personalInfo.email}`} className="hover:underline">
-              {personalInfo.email}
-            </a>
-          </ContactItem>
-          <ContactItem icon={FaMapMarkerAlt} title="Location">
-            {personalInfo.location}
-          </ContactItem>
-          <ContactItem icon={FaLinkedin} title="Linkedin">
-            <a href={personalInfo.linkedin} className="hover:underline" target="_blank">
-              {personalInfo.linkedin}
-            </a>
-          </ContactItem>
-          <ContactItem icon={FaGithub} title="GitHub">
-            <a href={personalInfo.github} className="hover:underline" target="_blank">
-              {personalInfo.github}
-            </a>
-          </ContactItem>
-          <ContactItem icon={FaFacebook} title="Facebook">
-            <a href={personalInfo.facebook} className="hover:underline" target="_blank">
-              {personalInfo.facebook}
-            </a>
-          </ContactItem>
+          {contactItems.map(({ title, icon, value, href }) => (
+            <ContactItem key={title} icon={icon} title={title} href={href}>
+              {value}
+            </ContactItem>
+          ))}
+
           <CollaborationCard />
         </div>
       </Card>

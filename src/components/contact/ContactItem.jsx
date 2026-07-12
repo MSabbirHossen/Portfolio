@@ -1,17 +1,41 @@
-import React from 'react';
+import Typography from '../common/Typography';
 
-const ContactItem = ({ icon: Icon, title, children }) => {
+export default function ContactItem({ icon: Icon, title, children, href }) {
   return (
-    <div>
-      <div className="flex items-start gap-3">
-        <Icon className="mt-1 h-4 w-4 text-accent-secondary" />
-        <div>
-          <p className="text-sm font-medium text-slate-100">{title} </p>
-          {children}
-        </div>
+    <div className="group flex items-start gap-4 rounded-xl p-3 transition-all duration-300 hover:bg-white/5">
+      <Icon
+        className="
+    mt-1
+    h-5
+    w-5
+    text-accent-secondary
+    transition-transform
+    duration-300
+    group-hover:scale-110
+  "
+        aria-hidden="true"
+      />
+
+      <div>
+        <Typography variant="subtitle">{title}</Typography>
+
+        {href ? (
+          <a
+            href={href}
+            target={href.startsWith('http') ? '_blank' : undefined}
+            rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            className="
+break-all
+transition-colors
+hover:text-accent-secondary
+"
+          >
+            {children}
+          </a>
+        ) : (
+          <p>{children}</p>
+        )}
       </div>
     </div>
   );
-};
-
-export default ContactItem;
+}

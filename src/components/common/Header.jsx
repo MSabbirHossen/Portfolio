@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { HiMenu, HiMoon, HiSun, HiX } from 'react-icons/hi';
+import { HiMenu, HiX } from 'react-icons/hi';
 import { portfolioData } from '../../data/portfolioData';
 import { useTheme } from '../../contexts/ThemeContext';
 
 import { NAV_LINKS } from '../../data/navigation';
 import NavLinks from '../layout/NavLinks.jsx';
+import ThemeToggle from '../layout/ThemeToggle';
 
 export default function Header() {
-  const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -96,23 +96,11 @@ export default function Header() {
         <nav className="hidden items-center space-x-8 md:flex">
           <NavLinks activeSection={activeSection} onNavigate={handleNavClick} />
 
-          <button
-            onClick={toggleTheme}
-            className="rounded-full border border-slate-200 p-2 text-slate-800 transition-colors hover:bg-slate-100 dark:border-slate-800 dark:text-slate-200 dark:hover:bg-slate-800"
-            aria-label="Toggle Theme"
-          >
-            {theme === 'dark' ? <HiSun className="h-5 w-5" /> : <HiMoon className="h-5 w-5" />}
-          </button>
+          <ThemeToggle />
         </nav>
 
         <div className="flex items-center space-x-4 md:hidden">
-          <button
-            onClick={toggleTheme}
-            className="rounded-full border border-slate-200 p-2 text-slate-800 transition-colors hover:bg-slate-100 dark:border-slate-800 dark:text-slate-200 dark:hover:bg-slate-800"
-            aria-label="Toggle Theme"
-          >
-            {theme === 'dark' ? <HiSun className="h-5 w-5" /> : <HiMoon className="h-5 w-5" />}
-          </button>
+          <ThemeToggle />
 
           <button
             onClick={() => setIsOpen((value) => !value)}

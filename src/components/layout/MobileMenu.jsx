@@ -2,28 +2,28 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import React from 'react';
 import NavLinks from './NavLinks';
+import { forwardRef } from 'react';
 
-const MobileMenu = ({ isOpen, activeSection, onNavigate }) => {
+const MobileMenu = forwardRef(function MobileMenu({ isOpen, activeSection, onNavigate }, ref) {
   return (
-    <div>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            id="mobile-navigation"
-            initial={{ opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.2, ease: 'easeOut' }}
-            className="glass absolute left-0 top-full w-full border-t border-slate-200 px-6 py-6 shadow-xl dark:border-slate-800 md:hidden"
-          >
-            <div className="flex flex-col space-y-4">
-              <NavLinks mobile activeSection={activeSection} onNavigate={onNavigate} />
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          id="mobile-navigation"
+          ref={ref}
+          initial={{ opacity: 0, y: -12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.2, ease: 'easeOut' }}
+          className="glass absolute left-0 top-full w-full border-t border-slate-200 px-6 py-6 shadow-xl dark:border-slate-800 md:hidden"
+        >
+          <div className="flex flex-col space-y-4">
+            <NavLinks mobile activeSection={activeSection} onNavigate={onNavigate} />
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
-};
+});
 
 export default MobileMenu;

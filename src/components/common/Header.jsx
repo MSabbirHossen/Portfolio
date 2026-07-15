@@ -8,6 +8,8 @@ import NavLinks from '../layout/NavLinks.jsx';
 import ThemeToggle from '../layout/ThemeToggle';
 import MobileMenu from '../layout/MobileMenu.jsx';
 
+import { useRef } from 'react';
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,6 +17,9 @@ export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
   const { name } = portfolioData.personalInfo;
+
+  const menuRef = useRef(null);
+  const toggleButtonRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -84,6 +89,27 @@ export default function Header() {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handlePointerDown = (event) => {
+      if (
+        menuRef.current?.contains(event.target) ||
+        toggleButtonRef.current?.contains(event.target)
+      ) {
+        return;
+      }
+
+      setIsOpen(false);
+    };
+
+    document.addEventListener('pointerdown', handlePointerDown);
+
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown);
+    };
+  }, [isOpen]);
+
   const handleNavClick = (e, sectionId) => {
     e.preventDefault();
     setIsOpen(false);
@@ -131,6 +157,7 @@ export default function Header() {
           <ThemeToggle />
 
           <button
+            ref={toggleButtonRef}
             onClick={() => setIsOpen((value) => !value)}
             className="rounded-md p-2 text-slate-800 transition-colors hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
             aria-label="Toggle menu"
@@ -143,7 +170,12 @@ export default function Header() {
       </div>
 
       {/* Mobile Navigation */}
-      <MobileMenu isOpen={isOpen} activeSection={activeSection} onNavigate={handleNavClick} />
+      <MobileMenu
+        ref={menuRef}
+        isOpen={isOpen}
+        activeSection={activeSection}
+        onNavigate={handleNavClick}
+      />
     </header>
   );
 }

@@ -29,51 +29,25 @@ export default function Header() {
       return () => window.removeEventListener('scroll', handleScroll);
     }
 
-    // const observedSections = NAV_LINKS.map((link) => document.getElementById(link.href)).filter(
-    //   Boolean
-    // );
-    // console.log(observedSections);
-
-    // const observer = new Observer(
-    //   (entries) => {
-    //     entries.forEach((entry) => {
-    //       if (entry.isIntersecting) {
-    //         setActiveSection(entry.target.id);
-    //       }
-    //     });
-    //   },
-    //   {
-    //     rootMargin: '-35% 0px -55% 0px',
-    //     threshold: 0.1,
-    //   }
-    // );
-
-    // observedSections.forEach((section) => observer.observe(section));
+    const observedSections = NAV_LINKS.map((link) => document.getElementById(link.href)).filter(
+      Boolean
+    );
 
     const observer = new Observer(
       (entries) => {
-        // console.log('Observer fired:', entries);
-
         entries.forEach((entry) => {
-          // console.log(entry.target.id, entry.isIntersecting, entry.intersectionRatio);
-
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
           }
         });
       },
       {
-        rootMargin: '-80px 0px -50% 0px',
-        threshold: 0,
+        rootMargin: '-35% 0px -55% 0px',
+        threshold: 0.1,
       }
     );
-    requestAnimationFrame(() => {
-      const sections = NAV_LINKS.map((link) => document.getElementById(link.href)).filter(Boolean);
 
-      // // console.log(sections);
-
-      sections.forEach((section) => observer.observe(section));
-    });
+    observedSections.forEach((section) => observer.observe(section));
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -101,7 +75,7 @@ export default function Header() {
 
     scrollToSection();
   };
-  // // console.log(activeSection);
+
   return (
     <header
       className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${

@@ -23,6 +23,7 @@ export default function Header() {
   const menuRef = useRef(null);
   const toggleButtonRef = useRef(null);
 
+  // Handle scroll and intersection observer to update active section
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -61,6 +62,7 @@ export default function Header() {
     };
   }, []);
 
+  // Handle body overflow when mobile menu is open
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
 
@@ -75,6 +77,7 @@ export default function Header() {
     };
   }, [isOpen]);
 
+  // Handle closing the mobile menu when pressing the Escape key
   useEffect(() => {
     if (!isOpen) return;
 
@@ -91,6 +94,7 @@ export default function Header() {
     };
   }, [isOpen]);
 
+  // Handle closing the mobile menu when clicking outside of it
   useEffect(() => {
     if (!isOpen) return;
 
@@ -112,6 +116,7 @@ export default function Header() {
     };
   }, [isOpen]);
 
+  // Handle navigation click
   const handleNavClick = (e, sectionId) => {
     e.preventDefault();
     setIsOpen(false);
@@ -186,6 +191,7 @@ export default function Header() {
       <MobileMenu
         ref={menuRef}
         isOpen={isOpen}
+        setIsOpen={setIsOpen}
         activeSection={activeSection}
         onNavigate={handleNavClick}
       />

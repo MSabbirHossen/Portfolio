@@ -6,46 +6,63 @@ import { forwardRef } from 'react';
 import Button from '../common/Button';
 import { FaFileAlt } from 'react-icons/fa';
 
-const MobileMenu = forwardRef(function MobileMenu({ isOpen, activeSection, onNavigate }, ref) {
+const MobileMenu = forwardRef(function MobileMenu(
+  { isOpen, setIsOpen, activeSection, onNavigate },
+  ref
+) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div
-          id="mobile-navigation"
-          ref={ref}
-          initial={{ x: '100%' }}
-          animate={{ x: 0 }}
-          exit={{ x: '100%' }}
-          transition={{
-            type: 'spring',
-            stiffness: 350,
-            damping: 32,
-          }}
-          // className="glass absolute left-0 top-full w-full border-t border-slate-200 px-6 py-6 shadow-xl dark:border-slate-800 md:hidden"
-          className="
-fixed
-right-0
-top-0
+        <>
+          <motion.div
+            id="mobile-navigation"
+            ref={ref}
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{
+              type: 'spring',
+              stiffness: 350,
+              damping: 32,
+            }}
+
+            className="
+fixed right-0 top-0
 h-screen
 w-[80%]
 max-w-sm
+z-50
+bg-slate-900/95
+backdrop-blur-xl
+border-l border-slate-800
+shadow-2xl
+md:hidden
 "
-        >
-          <div className="flex flex-col space-y-6 py-6">
-            <NavLinks mobile activeSection={activeSection} onNavigate={onNavigate} />
-            <Button
-              as="a"
-              href="/resume/Md_Sabbir_Hossen_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              size="sm"
-              variant="primary"
-            >
-              <FaFileAlt className="h-4 w-4" />
-              Resume
-            </Button>
-          </div>
-        </motion.div>
+          >
+            <div className="flex h-full flex-col gap-6 p-6">
+              <NavLinks mobile activeSection={activeSection} onNavigate={onNavigate} />
+              <Button
+                as="a"
+                href="/resume/Md_Sabbir_Hossen_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                size="sm"
+                variant="primary"
+              >
+                <FaFileAlt className="h-4 w-4" />
+                Resume
+              </Button>
+            </div>
+          </motion.div>
+          <motion.aside
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-40 bg-slate-900/50 backdrop-blur-sm md:hidden"
+            onClick={() => setIsOpen(false)}
+          ></motion.aside>
+        </>
       )}
     </AnimatePresence>
   );

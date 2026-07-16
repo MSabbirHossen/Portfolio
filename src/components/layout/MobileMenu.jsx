@@ -13,13 +13,25 @@ const MobileMenu = forwardRef(function MobileMenu({ isOpen, activeSection, onNav
         <motion.div
           id="mobile-navigation"
           ref={ref}
-          initial={{ opacity: 0, y: -12 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -12 }}
-          transition={{ duration: 0.2, ease: 'easeOut' }}
-          className="glass absolute left-0 top-full w-full border-t border-slate-200 px-6 py-6 shadow-xl dark:border-slate-800 md:hidden"
+          initial={{ x: '100%' }}
+          animate={{ x: 0 }}
+          exit={{ x: '100%' }}
+          transition={{
+            type: 'spring',
+            stiffness: 350,
+            damping: 32,
+          }}
+          // className="glass absolute left-0 top-full w-full border-t border-slate-200 px-6 py-6 shadow-xl dark:border-slate-800 md:hidden"
+          className="
+fixed
+right-0
+top-0
+h-screen
+w-[80%]
+max-w-sm
+"
         >
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-6 py-6">
             <NavLinks mobile activeSection={activeSection} onNavigate={onNavigate} />
             <Button
               as="a"

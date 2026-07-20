@@ -91,7 +91,7 @@ export default function Hero() {
                 Currently focused on
               </p>
               <p className="mt-2 text-lg font-semibold text-white">
-                React, MERN, AI tools, and Secure Development.
+                React, MERN, AI tools and Secure Development.
               </p>
             </div>
           </motion.div>

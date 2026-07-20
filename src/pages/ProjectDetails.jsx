@@ -51,13 +51,7 @@ export default function ProjectDetails() {
 
             {/* Lessons */}
 
-            <Card>
-              <Typography variant="subtitle" className="mb-4">
-                Lessons Learned
-              </Typography>
-
-              <Typography variant="body">{project.lessonsLearned}</Typography>
-            </Card>
+            <ProjectBulletList title="Lessons Learned" items={project.lessonsLearned} />
 
             {/* Features */}
 

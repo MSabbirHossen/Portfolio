@@ -10,13 +10,14 @@ import ProjectNotFound from '../components/project-details/ProjectNotFound';
 import ProjectHero from '../components/project-details/ProjectHero';
 import ProjectTechStack from '../components/project-details/ProjectTechStack';
 import ProjectPreview from '../ProjectPreview';
+import ProjectLinkCard from '../components/project-details/ProjectLinkCard';
 
 export default function ProjectDetails() {
   const { slug } = useParams();
 
   const project = portfolioData.projects.find((item) => item.id === slug);
   // console.log('portfolioData.projects', portfolioData.projects.screenshots);
-  console.log('Selected Project:', project.screenshots); // Debugging line to check the project object
+  // console.log('Selected Project:', project.screenshots); // Debugging line to check the project object
 
   if (!project) {
     return <ProjectNotFound />;
@@ -127,39 +128,13 @@ export default function ProjectDetails() {
             <Card className="space-y-5">
               <Typography variant="subtitle">Project Links</Typography>
 
-              {project.githubUrl && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-between rounded-xl border p-4 transition hover:border-indigo-500"
-                >
-                  <div className="flex items-center gap-3">
-                    <FaGithub className="text-xl" />
+              <ProjectLinkCard icon={FaGithub} title="GitHub Repository" href={project.githubUrl} />
 
-                    <span>GitHub Repository</span>
-                  </div>
-
-                  <FaExternalLinkAlt />
-                </a>
-              )}
-
-              {project.liveUrl && (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-between rounded-xl border p-4 transition hover:border-indigo-500"
-                >
-                  <div className="flex items-center gap-3">
-                    <FaExternalLinkAlt className="text-xl" />
-
-                    <span>Live Website</span>
-                  </div>
-
-                  <FaExternalLinkAlt />
-                </a>
-              )}
+              <ProjectLinkCard
+                icon={FaExternalLinkAlt}
+                title="Live Website"
+                href={project.liveUrl}
+              />
             </Card>
 
             {/* Future */}

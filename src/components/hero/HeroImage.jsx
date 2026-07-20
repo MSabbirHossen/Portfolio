@@ -1,24 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaArrowDown, FaDownload } from 'react-icons/fa';
 import heroImage from '../../assets/hero.png';
-import { portfolioData } from '../../data/portfolioData';
-import Typography from '../common/Typography';
-import Button from '../common/Button';
+
+import { floatingAnimation, heroImageVariants } from './heroVariants';
 
 const HeroImage = () => {
   return (
     <motion.div
       className="relative mx-auto w-full max-w-md"
-      initial={{ opacity: 0, scale: 0.94 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.75, ease: 'easeOut', delay: 0.12 }}
+      variants={heroImageVariants}
+      initial="hidden"
+      animate="visible"
     >
       <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent-primary/30 via-accent-secondary/20 to-transparent blur-2xl" />
       <motion.div
         className="relative glass rounded-[2rem] border border-white/10 p-5 shadow-2xl shadow-black/20"
-        animate={{ y: [0, -6, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+        animate={floatingAnimation.animate}
+        transition={floatingAnimation.transition}
       >
         <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-dark-surface">
           <img

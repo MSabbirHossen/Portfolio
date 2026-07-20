@@ -5,6 +5,7 @@ import { FaArrowDown, FaDownload } from 'react-icons/fa';
 import Typography from '../common/Typography';
 import Button from '../common/Button';
 import HeroActions from './HeroActions';
+import { heroContentVariants } from './heroVariants';
 
 const HeroContent = ({ personalInfo, onContact }) => {
   const { name, title, secondaryTitle, github, linkedin, facebook, resumeUrl } = personalInfo;
@@ -12,9 +13,9 @@ const HeroContent = ({ personalInfo, onContact }) => {
   return (
     <motion.div
       className="space-y-7 text-center lg:text-left"
-      initial={{ opacity: 0, y: 18 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: 'easeOut' }}
+      variants={heroContentVariants}
+      initial="hidden"
+      animate="visible"
     >
       <div className="space-y-4">
         <Typography

@@ -6,6 +6,7 @@ import { portfolioData } from '../data/portfolioData';
 
 import Card from '../components/common/Card';
 import Typography from '../components/common/Typography';
+import ProjectNotFound from '../components/project-details/ProjectNotFound';
 
 export default function ProjectDetails() {
   const { slug } = useParams();
@@ -13,23 +14,7 @@ export default function ProjectDetails() {
   const project = portfolioData.projects.find((item) => item.id === slug);
 
   if (!project) {
-    return (
-      <div className="mx-auto max-w-5xl px-6 py-24">
-        <Typography variant="h2">Project not found</Typography>
-
-        <Typography variant="body" className="mt-4 text-slate-500">
-          The project you requested doesn't exist.
-        </Typography>
-
-        <Link
-          to="/"
-          className="mt-8 inline-flex items-center gap-2 text-indigo-600 hover:underline"
-        >
-          <FaArrowLeft />
-          Back Home
-        </Link>
-      </div>
-    );
+    return <ProjectNotFound />;
   }
 
   return (

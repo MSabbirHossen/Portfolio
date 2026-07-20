@@ -69,21 +69,12 @@ export default function ProjectDetails() {
             {/* Features */}
 
             {project.features && (
-              <Card>
-                <Typography variant="subtitle" className="mb-5">
-                  Key Features
-                </Typography>
-
-                <ul className="grid gap-3 md:grid-cols-2">
-                  {project.features.map((feature) => (
-                    <li key={feature} className="flex gap-3 text-slate-600 dark:text-slate-400">
-                      <span className="mt-2 h-2 w-2 rounded-full bg-emerald-500" />
-
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Card>
+              <ProjectBulletList
+                title="Key Features"
+                items={project.features}
+                columns
+                bulletColor="bg-emerald-500"
+              />
             )}
 
             {/* API */}

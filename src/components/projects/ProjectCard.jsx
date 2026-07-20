@@ -2,8 +2,7 @@ import Typography from '../common/Typography';
 import Card from '../common/Card';
 import TechnologyIcons from './TechnologyIcons';
 import ProjectLinks from './ProjectLinks';
-import ProjectMeta from './ProjectMeta';
-import ProjectStatusBadge from './ProjectStatusBadge';
+
 import ProjectHeader from './ProjectHeader';
 import ProjectImage from './ProjectImage';
 

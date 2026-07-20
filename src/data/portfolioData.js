@@ -555,12 +555,27 @@ export const portfolioData = {
         'Cloud infrastructure: MongoDB Atlas for database, Firebase for authentication, Vercel for frontend, Render/Railway options for backend.',
         'Security layer: Helmet headers, CORS with frontend whitelist, rate limiting, Firebase JWT token verification, MongoDB IP whitelist.',
       ],
-      challenges:
-        'Integrating Firebase authentication tokens with Express backend for secure API communication, configuring Mongoose schemas for complex product/import relationships, coordinating MongoDB and Firebase initialization timing, implementing proper error handling across full stack.',
-      lessonsLearned:
-        'Mastered Firebase Admin SDK for JWT verification, learned MVC pattern architecture in Express, understood cloud database integration with Mongoose ODM, implemented security best practices (Helmet, CORS, rate limiting), discovered importance of comprehensive documentation for full-stack projects.',
-      futureImprovements:
-        'Add bulk import operations for large datasets, implement real-time notifications using WebSockets, add advanced search and filtering with pagination, create admin dashboard for system analytics, add payment integration for premium features, implement AI-powered product recommendations.',
+      challenges: [
+        'Integrating Firebase authentication tokens with Express backend for secure API communication',
+        ' Configuring Mongoose schemas for complex product/import relationships',
+        ' Coordinating MongoDB and Firebase initialization timing',
+        ' Implementing proper error handling across full stack.',
+      ],
+      lessonsLearned: [
+        'Mastered Firebase Admin SDK for JWT verification',
+        ' Learned MVC pattern architecture in Express',
+        ' Understood cloud database integration with Mongoose ODM',
+        ' Implemented security best practices (Helmet, CORS, rate limiting)',
+        ' Discovered importance of comprehensive documentation for full-stack projects.',
+      ],
+      futureImprovements: [
+        'Add bulk import operations for large datasets',
+        'Implement real-time notifications using WebSockets',
+        'Add advanced search and filtering with pagination',
+        'Create admin dashboard for system analytics',
+        'Add payment integration for premium features',
+        'Implement AI-powered product recommendations',
+      ],
       githubUrl: 'https://github.com/MSabbirHossen/export-import-project',
       liveUrl: 'https://import-export-hub-client.vercel.app/',
       featured: true,
@@ -600,12 +615,22 @@ export const portfolioData = {
         'Component-based architecture with modular directories (components, pages, context).',
         'Client-side routing using React Router for seamless SPA navigation.',
       ],
-      challenges:
-        'Implementing secure Firebase authentication with protected routes, real-time game filtering with search/category functionality, and maintaining responsive design with glassmorphism effects across all devices.',
-      lessonsLearned:
-        'Mastered Firebase authentication flow (email/password and Google OAuth), implemented advanced filtering/search patterns in React, and created modern UI with Tailwind CSS v4 and glassmorphism effects.',
-      futureImprovements:
-        'Integrate real-time game library updates from API, add user game library/wishlist feature, implement social features (reviews, ratings, community discussions), and optimize performance with code splitting.',
+      challenges: [
+        'Implementing secure Firebase authentication with protected routes',
+        ' Real-time game filtering with search/category functionality',
+        ' And maintaining responsive design with glassmorphism effects across all devices.',
+      ],
+      lessonsLearned: [
+        'Mastered Firebase authentication flow (email/password and Google OAuth)',
+        ' Implemented advanced filtering/search patterns in React',
+        ' Created modern UI with Tailwind CSS v4 and glassmorphism effects.',
+      ],
+      futureImprovements: [
+        'Integrate real-time game library updates from API',
+        ' Add user game library/wishlist feature',
+        ' Implement social features (reviews, ratings, community discussions)',
+        ' And optimize performance with code splitting.',
+      ],
       githubUrl: 'https://github.com/MSabbirHossen/Online-Game-Library',
       liveUrl: 'https://online-game-library.web.app/',
       featured: true,
@@ -691,12 +716,22 @@ export const portfolioData = {
         'localStorage integration for app installation persistence across sessions',
         'React Router v7 with protected routes and dynamic app data loading via appsLoader',
       ],
-      challenges:
-        'Integrating Firebase authentication with multiple OAuth providers while managing auth state persistence, protecting routes, and maintaining app installation data across page refreshes without backend.',
-      lessonsLearned:
-        'Mastered React 19 with Vite build optimization, implemented protected route patterns with context API, and learned effective localStorage management for client-side data persistence without a database.',
-      futureImprovements:
-        'Complete Profile page with user data editing, implement banner slider with auto-rotating content, add newsletter signup section, integrate advanced animations with Framer Motion, and deploy to Firebase Hosting with production domain setup.',
+      challenges: [
+        'Integrating Firebase authentication with multiple OAuth providers while managing auth state persistence',
+        ' Protecting routes, and maintaining app installation data across page refreshes without backend.',
+      ],
+      lessonsLearned: [
+        'Mastered React 19 with Vite build optimization',
+        ' Implemented protected route patterns with context API',
+        ' Learned effective localStorage management for client-side data persistence without a database.',
+      ],
+      futureImprovements: [
+        'Complete Profile page with user data editing',
+        ' Implement banner slider with auto-rotating content',
+        ' Add newsletter signup section',
+        ' Integrate advanced animations with Framer Motion',
+        'Deploy to Firebase Hosting with production domain setup.',
+      ],
       githubUrl: 'https://github.com/MSabbirHossen/Personal_App-Store_Authentication',
       liveUrl: 'https://personal-app-store-89cac.web.app/',
       featured: false,

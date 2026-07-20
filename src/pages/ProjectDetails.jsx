@@ -95,14 +95,7 @@ export default function ProjectDetails() {
 
             {/* Future */}
 
-            <Card>
-              <Typography variant="subtitle" className="mb-4">
-                Future Improvements
-              </Typography>
-
-              <Typography variant="body">{project.futureImprovements}</Typography>
-            </Card>
-
+            <ProjectBulletList title="Future Improvements" items={project.futureImprovements} />
             {/* Screenshot */}
 
             <ProjectPreview title={project.title} screenshots={project.screenshots} />

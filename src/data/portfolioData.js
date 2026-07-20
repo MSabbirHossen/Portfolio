@@ -447,8 +447,14 @@ export const portfolioData = {
         'Complex state management patterns,',
         'secure API design with token validation and rate limiting.',
       ],
-      futureImprovements:
-        'Real-time lesson notifications, lesson recommendations using AI, comment threading and nested discussions, lesson statistics dashboard, social sharing analytics, and mobile app development.',
+      futureImprovements: [
+        'Real-time lesson notifications,',
+        ' Lesson recommendations using AI,',
+        ' Comment threading and nested discussions,',
+        ' Lesson statistics dashboard,',
+        ' Social sharing analytics,',
+        ' Mobile app development.',
+      ],
       githubUrl: 'https://github.com/MSabbirHossen/Digital-Life-Lessons',
       liveUrl: 'https://digital-life-lessons-client.vercel.app/',
       screenshots: ['/screenshots/digital-life-lessons-hero.png'],

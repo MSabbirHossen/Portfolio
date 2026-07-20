@@ -12,6 +12,7 @@ import ProjectTechStack from '../components/project-details/ProjectTechStack';
 import ProjectPreview from '../ProjectPreview';
 import ProjectLinkCard from '../components/project-details/ProjectLinkCard';
 import ProjectLinks from '../components/project-details/ProjectLinks';
+import ProjectBulletList from '../components/project-details/ProjectBulletList';
 
 export default function ProjectDetails() {
   const { slug } = useParams();
@@ -43,21 +44,7 @@ export default function ProjectDetails() {
 
             {/* Architecture */}
 
-            <Card>
-              <Typography variant="subtitle" className="mb-5">
-                Architecture
-              </Typography>
-
-              <ul className="space-y-3">
-                {project.architecture.map((item) => (
-                  <li key={item} className="flex gap-3 text-slate-600 dark:text-slate-400">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-indigo-500" />
-
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </Card>
+            <ProjectBulletList title="Architecture" items={project.architecture} />
 
             {/* Challenges */}
 

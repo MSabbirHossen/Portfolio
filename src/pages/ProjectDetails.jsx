@@ -13,6 +13,7 @@ import ProjectPreview from '../ProjectPreview';
 import ProjectLinkCard from '../components/project-details/ProjectLinkCard';
 import ProjectLinks from '../components/project-details/ProjectLinks';
 import ProjectBulletList from '../components/project-details/ProjectBulletList';
+import ProjectApiEndpoints from '../components/project-details/ProjectApiEndpoints';
 
 export default function ProjectDetails() {
   const { slug } = useParams();
@@ -65,25 +66,7 @@ export default function ProjectDetails() {
             )}
 
             {/* API */}
-
-            {project.apiEndpoints && (
-              <Card>
-                <Typography variant="subtitle" className="mb-5">
-                  API Endpoints
-                </Typography>
-
-                <div className="space-y-3">
-                  {project.apiEndpoints.map((endpoint) => (
-                    <code
-                      key={endpoint}
-                      className="block rounded-lg bg-slate-100 p-3 text-sm dark:bg-slate-800"
-                    >
-                      {endpoint}
-                    </code>
-                  ))}
-                </div>
-              </Card>
-            )}
+            <ProjectApiEndpoints endpoints={project.apiEndpoints} />
           </div>
 
           {/* RIGHT */}

@@ -28,7 +28,7 @@ export default function Home() {
         <title>Md. Sabbir Hossen — Portfolio</title>
         <meta
           name="description"
-          content="Production-ready portfolio of Md. Sabbir Hossen, an AI-powered MERN stack developer and cybersecurity learner."
+          content="Production-ready portfolio of Md. Sabbir Hossen, a Junior MERN stack developer and cybersecurity learner."
         />
       </Helmet>
       <Hero />

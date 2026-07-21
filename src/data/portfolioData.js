@@ -57,7 +57,7 @@ import { VscVscodeInsiders } from 'react-icons/vsc';
 export const portfolioData = {
   personalInfo: {
     name: 'Md. Sabbir Hossen',
-    title: 'AI-Powered MERN Stack Developer',
+    title: 'Junior MERN Stack Developer',
     secondaryTitle: 'Cybersecurity Learner',
     brandName: 'Part-time Coder',
     brandTagline: 'Ignite Your Curiosity and See the Possibilities ✨',

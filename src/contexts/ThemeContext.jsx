@@ -2,6 +2,9 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 const ThemeContext = createContext();
 
+const getSystemTheme = () =>
+  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
 export const ThemeProvider = ({ children }) => {
   // Initialize theme state from localStorage or default to 'system'
   const [theme, setTheme] = useState(() => {
@@ -11,13 +14,9 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     const root = document.documentElement;
-    if (theme === 'light') {
-      root.classList.add('light');
-      root.classList.remove('dark');
-    } else {
-      root.classList.add('dark');
-      root.classList.remove('light');
-    }
+    const activeTheme = theme === 'system' ? getSystemTheme() : theme;
+    setResolvedTheme(activeTheme);
+
     localStorage.setItem('portfolio-theme', theme);
   }, [theme]);
 

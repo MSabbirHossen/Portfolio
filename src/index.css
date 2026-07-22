@@ -34,38 +34,38 @@
   --color-dark-border-hover: #334155;
 
   /* Light theme surfaces */
---color-light-bg: #f5f7fb;
---color-light-surface: #eef2f8;
---color-light-card: #ffffff;
---color-light-card-hover: #fbfcff;
+  --color-light-bg: #f5f7fb;
+  --color-light-surface: #eef2f8;
+  --color-light-card: #ffffff;
+  --color-light-card-hover: #fbfcff;
 
---color-light-border: #d8e0eb;
---color-light-border-hover: #c2d0e0;
+  --color-light-border: #d8e0eb;
+  --color-light-border-hover: #c2d0e0;
 
-/* Semantic colors */
+  /* Semantic colors */
 
-/* Text */
---color-text-primary-dark: #f8fafc;
---color-text-secondary-dark: #cbd5e1;
---color-text-muted-dark: #94a3b8;
+  /* Text */
+  --color-text-primary-dark: #f8fafc;
+  --color-text-secondary-dark: #cbd5e1;
+  --color-text-muted-dark: #94a3b8;
 
---color-text-primary-light: #0f172a;
---color-text-secondary-light: #334155;
---color-text-muted-light: #64748b;
+  --color-text-primary-light: #0f172a;
+  --color-text-secondary-light: #334155;
+  --color-text-muted-light: #64748b;
 
-/* Surfaces */
---surface-base-dark: rgba(21, 27, 45, 0.78);
---surface-elevated-dark: rgba(26, 34, 56, 0.92);
+  /* Surfaces */
+  --surface-base-dark: rgba(21, 27, 45, 0.78);
+  --surface-elevated-dark: rgba(26, 34, 56, 0.92);
 
---surface-base-light: #ffffff;
---surface-elevated-light: #fbfcff;
+  --surface-base-light: #ffffff;
+  --surface-elevated-light: #fbfcff;
 
-/* Borders */
---border-default-dark: rgba(255,255,255,.06);
---border-hover-dark: rgba(255,255,255,.12);
+  /* Borders */
+  --border-default-dark: rgba(255, 255, 255, 0.06);
+  --border-hover-dark: rgba(255, 255, 255, 0.12);
 
---border-default-light: rgba(148,163,184,.18);
---border-hover-light: rgba(99,102,241,.25);
+  --border-default-light: rgba(148, 163, 184, 0.18);
+  --border-hover-light: rgba(99, 102, 241, 0.25);
 }
 
 /* ─── Base layer ─── */
@@ -88,16 +88,16 @@
     min-height: 100vh;
   }
 
-html.light {
-  background-color: var(--color-light-bg);
+  html.light {
+    background-color: var(--color-light-bg);
 
-  background-image:
-    radial-gradient(circle at 0% 0%, rgba(99,102,241,.08), transparent 35%),
-    radial-gradient(circle at 100% 0%, rgba(6,182,212,.06), transparent 30%),
-    linear-gradient(#ffffff,#f4f7fc);
+    background-image:
+      radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.08), transparent 35%),
+      radial-gradient(circle at 100% 0%, rgba(6, 182, 212, 0.06), transparent 30%),
+      linear-gradient(#ffffff, #f4f7fc);
 
-  color:#334155;
-}
+    color: #334155;
+  }
 
   /* Focus rings — accessible */
   :focus-visible {
@@ -165,22 +165,22 @@ html.light .glass {
   border: 1px solid var(--border-default-dark);
   box-shadow: var(--shadow-soft);
   transition:
-    background-color .3s ease,
-    border-color .3s ease,
-    box-shadow .3s ease,
-    transform .25s ease;
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.25s ease;
 }
 
 html.light .surface {
   background: var(--surface-base-light);
   border: 1px solid var(--border-default-light);
   box-shadow:
-    0 10px 30px rgba(15,23,42,.05),
-    0 24px 60px rgba(15,23,42,.08);
+    0 10px 30px rgba(15, 23, 42, 0.05),
+    0 24px 60px rgba(15, 23, 42, 0.08);
 }
 
 .surface-hover {
-  transition: all .25s ease;
+  transition: all 0.25s ease;
 }
 
 .surface-hover:hover {
@@ -196,9 +196,9 @@ html.light .border-default {
   border-color: var(--border-default-light);
 }
 
-.card-base {
+/* .card-base {
   @apply surface rounded-2xl;
-}
+} */
 
 .page-shell {
   width: min(100%, 80rem);

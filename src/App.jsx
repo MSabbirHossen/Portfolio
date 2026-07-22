@@ -23,10 +23,10 @@ export default function App() {
               <Route index element={<Home />} />
               <Route path="projects/:slug" element={<ProjectDetails />} />
               <Route path="project/:id" element={<Navigate to="/" replace />} />
-              <Route path="/github-portfolio" element={<GitHubStats />} />
-              <Route path="/skills" element={<Skills />} />
+              <Route path="skills" element={<Skills />} />
               <Route path="about" element={<About />} />
               <Route path="certifications" element={<Certifications />} />
+              <Route path="github-stats" element={<GitHubStats />} />
               <Route path="education" element={<Education />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Route>

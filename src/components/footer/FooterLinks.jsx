@@ -27,6 +27,11 @@ const FooterLinks = () => {
                 dark:hover:text-accent-primary
               "
             >
+              {link.icon && (
+                <span className="mr-1 inline-block align-middle">
+                  <link.icon className="h-4 w-4" />{' '}
+                </span>
+              )}{' '}
               {link.name}
             </a>
           </li>

@@ -18,7 +18,6 @@ export default function Footer() {
 
         <FooterResources />
       </div>
-      <FooterSocials />
       {/* Bottom */}
       <FooterBottom />
       <BackToTopButton />

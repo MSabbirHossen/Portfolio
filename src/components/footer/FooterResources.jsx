@@ -1,5 +1,6 @@
 import React from 'react';
 import Typography from '../common/Typography';
+
 import { resources } from '../../data/navigation';
 
 const FooterResources = () => {
@@ -33,6 +34,11 @@ dark:text-slate-400
 dark:focus-visible:ring-offset-slate-900
 "
             >
+              {link.icon && (
+                <span className="mr-1 inline-block align-middle">
+                  <link.icon className="h-4 w-4" />{' '}
+                </span>
+              )}{' '}
               {link.label}
             </a>
           </li>

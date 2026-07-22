@@ -6,12 +6,12 @@ export default function FooterBrand() {
 
   return (
     <div className="space-y-4">
-      <Typography variant="caption" className="uppercase tracking-[0.2em] text-accent-primary">
+      {/* <Typography variant="caption" className="uppercase tracking-[0.2em] text-accent-primary">
         MS's Personal Brand
-      </Typography>
+      </Typography> */}
 
       <Typography variant="h4" className="text-slate-900 dark:text-slate-100">
-        {personalInfo.brandName}
+        {personalInfo.name}
       </Typography>
 
       <Typography variant="body" className="max-w-sm text-slate-500 dark:text-slate-400">

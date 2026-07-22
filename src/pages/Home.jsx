@@ -33,9 +33,9 @@ export default function Home() {
       </Helmet>
       <Hero />
       <About />
-      <GitHubStats />
-      <Projects />
       <Skills />
+      {/* <GitHubStats /> */}
+      <Projects />
       <Contact />
       {/* <Certifications /> */}
       {/* <Education /> */}
